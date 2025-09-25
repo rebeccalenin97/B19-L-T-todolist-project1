@@ -1,0 +1,188 @@
+body {
+  /* Cute background image from Unsplash (pastel pattern with bunnies) */
+  background-image: url('https://images.unsplash.com/photo-1616435151247-c6b5aa05c3e2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  font-family: 'Kalam', 'Patrick Hand', 'Comic Neue', 'Arial', sans-serif; /* Updated to cuter fonts */
+  color: #333;
+}
+
+.todo-container {
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 25px;
+  background: linear-gradient(135deg, #fce4ec, #b2ebf2); /* Pastel pink to cyan gradient */
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  border: 2px solid #f8bbd0; /* Soft pink border */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.todo-container:hover {
+  transform: translateY(-5px); /* Subtle lift effect on hover */
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.3);
+}
+
+h2 {
+  font-family: 'Kalam', 'Patrick Hand', 'Comic Neue', 'Arial', sans-serif; /* Updated to cuter fonts */
+  color: #d81b60; /* Vibrant pink for heading */
+  font-weight: 700; /* Bolder for emphasis */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.task-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px;
+  margin-bottom: 8px;
+  background: #ffffffcc; /* Semi-transparent white for contrast */
+  border-radius: 10px;
+  border: 1px solid #e1bee7; /* Light purple border */
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.task-item:hover {
+  background: #f3e5f5; /* Light purple on hover */
+  transform: scale(1.02); /* Slight zoom effect */
+}
+
+.task-item .task-text {
+  flex-grow: 1;
+  margin-left: 12px;
+  color: #4a148c; /* Dark purple text */
+}
+
+.task-item .task-category {
+  font-size: 0.9em;
+  color: #ad1457; /* Pinkish category text */
+  margin-left: 12px;
+}
+
+.task-item .task-due-date {
+  font-size: 0.9em;
+  color: #6a1b9a; /* Darker purple for due date */
+  margin-left: 12px;
+}
+
+.task-item.overdue {
+  border: 2px solid #ef5350; /* Red border for overdue tasks */
+  background: #ffebee; /* Light red background */
+}
+
+.task-item.overdue .task-due-date::after {
+  content: ' Oh no, time’s up! 🐰';
+  color: #ef5350; /* Red for overdue message */
+  font-style: italic;
+}
+
+.task-item .btn {
+  margin-left: 5px;
+  border-radius: 8px;
+}
+
+.btn-primary {
+  background-color: #f06292; /* Bright pink button */
+  border-color: #f06292;
+}
+
+.btn-primary:hover {
+  background-color: #ec407a; /* Darker pink on hover */
+}
+
+.btn-secondary {
+  background-color: #4dd0e1; /* Cyan clear button */
+  border-color: #4dd0e1;
+}
+
+.btn-secondary:hover {
+  background-color: #26c6da; /* Darker cyan on hover */
+}
+
+.btn-danger {
+  background-color: #ef5350; /* Soft red for delete */
+  border-color: #ef5350;
+}
+
+.btn-danger:hover {
+  background-color: #e53935; /* Darker red on hover */
+}
+
+.nav-tabs .nav-link {
+  cursor: pointer;
+  color: #d81b60; /* Pink tabs */
+  border-radius: 8px;
+}
+
+.nav-tabs .nav-link.active {
+  background-color: #f8bbd0; /* Light pink for active tab */
+  color: #ffffff;
+  font-weight: bold;
+}
+
+.nav-tabs .nav-link:hover {
+  background-color: #fce4ec; /* Light pink hover */
+}
+
+/* Cute icon styles for replacing checkbox */
+.cute-icon {
+  font-size: 1.5em; /* Larger icon for cuteness */
+  cursor: pointer; /* Hand cursor on hover */
+  transition: transform 0.2s ease, color 0.2s ease; /* Smooth transitions */
+  margin-right: 10px; /* Space between icon and text */
+  color: #f06292; /* Match the vibrant pink theme */
+}
+
+.cute-icon:hover {
+  transform: scale(1.2); /* Slight zoom on hover for interactivity */
+  color: #ec407a; /* Darker pink on hover */
+}
+
+.cute-icon:active {
+  transform: scale(1.4); /* Brief pop effect when clicked */
+}
+
+.task-item.completed .cute-icon {
+  color: #d81b60; /* Vibrant pink for completed tasks */
+}
+
+/* Responsive adjustments */
+@media (max-width: 576px) {
+  .todo-container {
+    margin: 20px;
+    padding: 15px;
+  }
+
+  .input-group {
+    flex-direction: column;
+  }
+
+  .input-group .form-control,
+  .input-group .form-select,
+  .input-group .btn {
+    width: 100%;
+    margin-bottom: 10px;
+    border-radius: 8px;
+  }
+
+  .task-item {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px;
+  }
+
+  .task-item .btn {
+    margin-top: 5px;
+  }
+
+  .cute-icon {
+    font-size: 1.2em; /* Smaller icon on mobile */
+  }
+
+  .task-item .task-due-date {
+    margin-left: 0;
+    margin-top: 5px;
+  }
+}
